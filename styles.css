@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+.background {
+    background: url('music-stage.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100vh;
+    position: relative;
+    animation: backgroundAnimation 10s infinite alternate;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+p {
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: rgba(255, 0, 0, 0.7);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: rgba(255, 0, 0, 1);
+}
+
+.character {
+    margin-top: 20px;
+    animation: sway 1s infinite alternate;
+}
+
+.latest-songs {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.latest-songs ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes backgroundAnimation {
+    0% { filter: brightness(1); }
+    100% { filter: brightness(0.8); }
+}
+
+@keyframes sway {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(5deg); }
+}
