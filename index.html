@@ -5,30 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Pallavi - Superstar</title>
     <style>
+        /* Base Styles */
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
             background: radial-gradient(circle at center, #1a1a2e, #16213e, #0f3460);
-            overflow: hidden;
             color: white;
+            overflow-x: hidden;
         }
 
         header {
             text-align: center;
-            padding: 30px;
+            padding: 20px;
             background: linear-gradient(to right, #6a0572, #a903fc);
             color: #fff;
             text-shadow: 0 0 10px #000;
         }
 
         header h1 {
-            font-size: 3.5em;
+            font-size: 3em;
             margin: 0;
             animation: glow 2s infinite alternate;
         }
 
         header p {
-            font-size: 1.5em;
+            font-size: 1.2em;
             margin: 10px 0;
         }
 
@@ -38,30 +39,85 @@
             background: #0f3460;
             color: #fff;
             margin: 20px auto;
-            width: 80%;
+            width: 90%;
             border-radius: 15px;
             box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-            font-size: 1.2em;
-        }
-
-        .wishes p {
-            margin: 10px 0;
+            font-size: 1em;
         }
 
         .galaxy {
             position: relative;
             width: 100%;
-            height: 70vh;
-            overflow: hidden;
+            height: 60vh;
         }
 
         .star {
             position: absolute;
-            width: 3px;
-            height: 3px;
+            width: 2px;
+            height: 2px;
             background: white;
             border-radius: 50%;
             animation: twinkle 2s infinite;
+        }
+
+        .singer-container {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .singer {
+            width: 150px;
+            height: 300px;
+            background: url('https://i.imgur.com/Q5RxXTQ.png') no-repeat center;
+            background-size: contain;
+            animation: singer-dance 2s infinite ease-in-out;
+        }
+
+        .music-notes {
+            position: absolute;
+            animation: float-notes 5s linear infinite;
+        }
+
+        .note {
+            position: absolute;
+            font-size: 1.5em;
+            animation: fly 3s ease-in-out infinite;
+        }
+
+        .balloons {
+            position: absolute;
+            width: 100%;
+            height: 70vh;
+        }
+
+        .balloon {
+            position: absolute;
+            width: 40px;
+            height: 60px;
+            background: radial-gradient(circle, #ff69b4, #ff1493);
+            border-radius: 50%;
+            animation: rise 4s ease-in-out infinite;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #16213e;
+            color: #fff;
+            font-size: 1em;
+        }
+
+        /* Keyframes */
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+            }
+            100% {
+                text-shadow: 0 0 20px #fff, 0 0 30px #ff69b4, 0 0 50px #ff69b4, 0 0 60px #ff69b4;
+            }
         }
 
         @keyframes twinkle {
@@ -73,22 +129,6 @@
             }
         }
 
-        .singer-container {
-            position: absolute;
-            bottom: 20%;
-            left: 50%;
-            transform: translate(-50%, 0);
-            text-align: center;
-        }
-
-        .singer {
-            width: 200px;
-            height: 400px;
-            background: url('https://i.imgur.com/Q5RxXTQ.png') no-repeat center;
-            background-size: contain;
-            animation: singer-dance 2s infinite ease-in-out;
-        }
-
         @keyframes singer-dance {
             0%, 100% {
                 transform: translateY(0) rotate(-5deg);
@@ -96,42 +136,6 @@
             50% {
                 transform: translateY(-10px) rotate(5deg);
             }
-        }
-
-        .music-notes {
-            position: absolute;
-            animation: float-notes 5s linear infinite;
-        }
-
-        .note {
-            position: absolute;
-            font-size: 2em;
-            animation: fly 3s ease-in-out infinite;
-        }
-
-        .note:nth-child(1) {
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .note:nth-child(2) {
-            left: 30%;
-            animation-delay: 0.5s;
-        }
-
-        .note:nth-child(3) {
-            left: 50%;
-            animation-delay: 1s;
-        }
-
-        .note:nth-child(4) {
-            left: 70%;
-            animation-delay: 1.5s;
-        }
-
-        .note:nth-child(5) {
-            left: 90%;
-            animation-delay: 2s;
         }
 
         @keyframes fly {
@@ -145,47 +149,6 @@
             }
         }
 
-        .balloons {
-            position: absolute;
-            width: 100%;
-            height: 80vh;
-            overflow: hidden;
-        }
-
-        .balloon {
-            position: absolute;
-            width: 50px;
-            height: 80px;
-            background: radial-gradient(circle, #ff69b4, #ff1493);
-            border-radius: 50%;
-            animation: rise 4s ease-in-out infinite;
-        }
-
-        .balloon:nth-child(1) {
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .balloon:nth-child(2) {
-            left: 30%;
-            animation-delay: 1s;
-        }
-
-        .balloon:nth-child(3) {
-            left: 50%;
-            animation-delay: 2s;
-        }
-
-        .balloon:nth-child(4) {
-            left: 70%;
-            animation-delay: 1.5s;
-        }
-
-        .balloon:nth-child(5) {
-            left: 90%;
-            animation-delay: 2.5s;
-        }
-
         @keyframes rise {
             0% {
                 transform: translateY(0);
@@ -197,20 +160,64 @@
             }
         }
 
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #16213e;
-            color: #fff;
-            font-size: 1em;
+        /* Media Queries */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.5em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .wishes {
+                font-size: 0.9em;
+            }
+
+            .singer {
+                width: 120px;
+                height: 240px;
+            }
+
+            .note {
+                font-size: 1.2em;
+            }
+
+            footer {
+                font-size: 0.8em;
+            }
         }
 
-        @keyframes glow {
-            0% {
-                text-shadow: 0 0 10px #fff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2em;
             }
-            100% {
-                text-shadow: 0 0 20px #fff, 0 0 30px #ff69b4, 0 0 50px #ff69b4, 0 0 60px #ff69b4;
+
+            header p {
+                font-size: 0.9em;
+            }
+
+            .wishes {
+                font-size: 0.8em;
+                padding: 10px;
+            }
+
+            .singer {
+                width: 100px;
+                height: 200px;
+            }
+
+            .note {
+                font-size: 1em;
+            }
+
+            .balloon {
+                width: 30px;
+                height: 50px;
+            }
+
+            footer {
+                font-size: 0.7em;
             }
         }
     </style>
@@ -223,14 +230,13 @@
 
     <div class="wishes">
         <p>Dear Pallavi,</p>
-        <p>On your special day, we celebrate not just your birthday, but the amazing journey you've embarked on as a musician. Your voice touches hearts, your passion inspires souls, and your talent shines as bright as the stars above.</p>
-        <p>May this year bring you countless melodies, standing ovations, and every success you dream of. Keep reaching for the stars and sharing your incredible gift with the world!</p>
+        <p>On your special day, we celebrate not just your birthday, but the amazing journey you've embarked on as a musician.</p>
+        <p>May this year bring you countless melodies, standing ovations, and every success you dream of. Keep reaching for the stars!</p>
         <p>With love and admiration,</p>
         <p>Your Biggest Fan ❤️</p>
     </div>
 
     <div class="galaxy">
-        <!-- Generating stars dynamically -->
         <script>
             for (let i = 0; i < 100; i++) {
                 let star = document.createElement('div');
